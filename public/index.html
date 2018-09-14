@@ -19,6 +19,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <% if (process.env.NODE_ENV == 'production') { %>
+    <script src="https://cdn.ravenjs.com/3.26.2/raven.min.js" crossorigin="anonymous"></script>
+    <script>Raven.config('https://30ddaeff51264e74add74ade50f896e5@sentry.isrv.tech/2', {
+        environment: "%NODE_ENV%",
+    }).install();
+    </script>
+    <% } %>
     <title>React App</title>
   </head>
   <body>
