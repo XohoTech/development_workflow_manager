@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import CreateRepoQuery from '../Queries/CreateRepoQuery';
 import '../App.css'
-import RepoList from '../Components/Repositories/RepoList';
 
 class DwmContainer extends Component {
 
@@ -14,7 +13,8 @@ class DwmContainer extends Component {
         accessControl: 'Private',
         language: 'php',
         versionControl: 'Git',
-        repos: [{}]
+        repos: [{}],
+        showLabel: false
     };
 
     mutationHandler = (propFunction, data) => {
@@ -33,7 +33,7 @@ class DwmContainer extends Component {
                             <input type="text" id="defaultFormRegisterNameEx"
                                    onChange={event => this.setState({repoName: event.target.value})}
                                    className="form-control"
-                            maxLength="62"/>
+                                   maxLength="62"/>
                             <br/>
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Owner</label>
                             <select className="form-control"
@@ -72,11 +72,19 @@ class DwmContainer extends Component {
                                               owner: this.state.owner,
                                               language: this.state.language
                                           }}
-                                           // onCompleted={data => console.log(data)}
-                                     >
-                                    {postMutation => <button className="btn btn-unique" onClick={postMutation}>Create</button>}
+                                          onCompleted={() => {
+                                              this.setState(prevState => {
+                                                  return {showLabel: !prevState.showLabel}
+                                              });
+                                          }}
+                                >
+                                    {postMutation => <button className="btn btn-success" onClick={postMutation}>Create</button>}
                                 </Mutation>
                             </div>
+                            <br/>
+                            { this.state.showLabel ?
+                                <label className="alert-info">Request Sent</label> : null
+                            }
                         </form>
                     </div>
                     <div className="col-7">
