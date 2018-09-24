@@ -11,10 +11,9 @@ class DwmContainer extends Component {
         owner: 'xohotech',
         project: 'DWM',
         accessControl: 'Private',
-        language: 'php',
+        language: 'java',
         versionControl: 'Git',
-        repos: [{}],
-        showLabel: false
+        repos: [{}]
     };
 
     mutationHandler = (propFunction, data) => {
@@ -37,29 +36,31 @@ class DwmContainer extends Component {
                             <br/>
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Owner</label>
                             <select className="form-control"
-                                    onChange={event => this.setState({owner: event.target.value})}>
-                                <option value="xohotech" selected>xohotech</option>
+                                    onChange={event => this.setState({owner: event.target.value})}
+                            defaultValue="xohotech">
+                                <option value="xohotech">xohotech</option>
                             </select>
                             <br/>
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Project</label>
                             <select className="form-control"
-                                    onChange={event => this.setState({project: event.target.value})}>
-                                <option value="DWMT" selected>DWM Test</option>
+                                    onChange={event => this.setState({project: event.target.value})}
+                            defaultValue="DWMT">
+                                <option value="DWMT">DWM Test</option>
                             </select>
                             <br/>
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Language</label>
-                            <select className="form-control"
+                            <select defaultValue="java" className="form-control"
                                     onChange={event => this.setState({language: event.target.value})}>
+                                <option value="java">Java</option>
                                 <option value="c">C</option>
                                 <option value="c#">C#</option>
                                 <option value="c++">C++</option>
                                 <option value="go">Go</option>
                                 <option value="html/css">HTML/CSS</option>
-                                <option value="java">Java</option>
                                 <option value="javascript">JavaScript</option>
                                 <option value="objective-c">Objective-C</option>
                                 <option value="perl">Perl</option>
-                                <option value="php selected">PHP</option>
+                                <option value="php">PHP</option>
                                 <option value="python">Python</option>
                                 <option value="ruby">Ruby</option>
                                 <option value="swift">Swift</option>
@@ -71,20 +72,10 @@ class DwmContainer extends Component {
                                               repoName: this.state.repoName,
                                               owner: this.state.owner,
                                               language: this.state.language
-                                          }}
-                                          onCompleted={() => {
-                                              this.setState(prevState => {
-                                                  return {showLabel: !prevState.showLabel}
-                                              });
-                                          }}
-                                >
+                                          }}>
                                     {postMutation => <button className="btn btn-success" onClick={postMutation}>Create</button>}
                                 </Mutation>
                             </div>
-                            <br/>
-                            { this.state.showLabel ?
-                                <label className="alert-info">Request Sent</label> : null
-                            }
                         </form>
                     </div>
                     <div className="col-7">

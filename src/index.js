@@ -16,7 +16,7 @@ const client = new Client({
         type: Config.authenticationType,
         apiKey: Config.apiKey
     },
-    fetchPolicy: 'cache-and-network'
+    disableOffline: true
 });
 
 
