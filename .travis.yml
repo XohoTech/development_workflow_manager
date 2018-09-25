@@ -19,12 +19,22 @@ script:
 # - npm test
   - npm run build
 deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: $S3_BUCKET
-  project: ./build/
-  skip_cleanup: true
-  acl: public_read
-on:
-  condition: $TRAVIS_BRANCH = "master" || $TRAVIS_BRANCH = "develop" || $TRAVIS_BRANCH = "DWM-11"
+    - provider: s3
+      access_key_id: $AWS_ACCESS_KEY
+      secret_access_key: $AWS_SECRET_KEY
+      bucket: $S3_BUCKET
+      project: ./build/
+      skip_cleanup: true
+      acl: public_read
+    on:
+      branch: master
+
+    - provider: s3
+      access_key_id: $AWS_ACCESS_KEY
+      secret_access_key: $AWS_SECRET_KEY
+      bucket: dwm-staging
+      project: ./build/
+      skip_cleanup: true
+      acl: public_read
+    on:
+      branch: DWM-11
