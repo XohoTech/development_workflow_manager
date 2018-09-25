@@ -8,11 +8,11 @@ cache:
 before_script:
   - if [ $TRAVIS_BRANCH == "develop" ];
     then
-    export $S3_BUCKET=dwm-staging;
+    export S3_BUCKET=dwm-staging;
     fi
   - if [ $TRAVIS_BRANCH == "master" ];
     then
-    export $S3_BUCKET=dwm-xt;
+    export S3_BUCKET=dwm-xt;
     fi
 script:
 # - npm test
