@@ -14,6 +14,7 @@ before_script:
     then
     export S3_BUCKET=dwm-xt;
     fi
+  - echo $S3_BUCKET
 script:
 # - npm test
   - npm run build
@@ -25,6 +26,6 @@ deploy:
   project: ./build/
   skip_cleanup: true
   acl: public_read
-on:
-  all_branches: true
-  condition: $TRAVIS_BRANCH =~ ^develop|master$
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH = "master" || $TRAVIS_BRANCH = "develop"
