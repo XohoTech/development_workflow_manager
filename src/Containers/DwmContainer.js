@@ -37,14 +37,14 @@ class DwmContainer extends Component {
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Owner</label>
                             <select className="form-control"
                                     onChange={event => this.setState({owner: event.target.value})}
-                            defaultValue="xohotech">
+                                    defaultValue="xohotech">
                                 <option value="xohotech">xohotech</option>
                             </select>
                             <br/>
                             <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Project</label>
                             <select className="form-control"
                                     onChange={event => this.setState({project: event.target.value})}
-                            defaultValue="DWMT">
+                                    defaultValue="DWMT">
                                 <option value="DWMT">DWM Test</option>
                             </select>
                             <br/>
