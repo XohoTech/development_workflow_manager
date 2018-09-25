@@ -1,3 +1,6 @@
+Master: [![Build Status](https://travis-ci.com/XohoTech/development_workflow_manager.svg?branch=master)](https://travis-ci.com/XohoTech/development_workflow_manager)
+Develop: [![Build Status](https://travis-ci.com/XohoTech/development_workflow_manager.svg?branch=develop)](https://travis-ci.com/XohoTech/development_workflow_manager)
+
 Please use 'npm start' command inside the project directory to launch the application
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
