@@ -28,4 +28,4 @@ deploy:
   acl: public_read
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH = "master" || $TRAVIS_BRANCH = "develop" || $TRAVIS_BRANCH = "DWM-11"
+    condition: $TRAVIS_BRANCH = "master" || $TRAVIS_BRANCH = "develop"
