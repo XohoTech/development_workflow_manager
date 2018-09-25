@@ -26,4 +26,5 @@ deploy:
   skip_cleanup: true
   acl: public_read
 on:
+  all_branches: true
   condition: $TRAVIS_BRANCH =~ ^develop|master$
