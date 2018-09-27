@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
-import CreateRepoQuery from '../Queries/CreateRepoQuery';
-import '../App.css'
+import CreateRepoQuery from '../../Queries/CreateRepoQuery';
+import '../../App.css'
 
-class DwmContainer extends Component {
+class NewRepo extends Component {
 
 
     state = {
         repoName: '',
         owner: 'xohotech',
-        project: 'DWM',
-        accessControl: 'Private',
+        project: 'DWMT',
         language: 'java',
-        versionControl: 'Git',
         repos: [{}]
     };
 
     mutationHandler = (propFunction, data) => {
         console.log(data);
         // propFun
-    }
+    };
 
     render() {
         return (
@@ -66,17 +64,16 @@ class DwmContainer extends Component {
                                 <option value="swift">Swift</option>
                             </select>
                             <br/>
-                            <div className="text-center mt-4">
-                                <Mutation mutation={CreateRepoQuery}
-                                          variables={{
-                                              repoName: this.state.repoName,
-                                              owner: this.state.owner,
-                                              language: this.state.language
-                                          }}>
-                                    {postMutation => <button className="btn btn-success" onClick={postMutation}>Create</button>}
-                                </Mutation>
-                            </div>
                         </form>
+                        <Mutation mutation={CreateRepoQuery}
+                                  variables={{
+                                      repoName: this.state.repoName,
+                                      owner: this.state.owner,
+                                      language: this.state.language,
+                                      project: this.state.project
+                                  }}>
+                            {postMutation => <button className="btn btn-success" onClick={postMutation}>Create</button>}
+                        </Mutation>
                     </div>
                     <div className="col-7">
 
@@ -87,4 +84,4 @@ class DwmContainer extends Component {
     }
 }
 
-export default DwmContainer;
+export default NewRepo;
