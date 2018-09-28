@@ -1,12 +1,14 @@
-import gql from 'graphql-tag'
+import gql from "graphql-tag";
 
-export default gql`mutation newProject($name: String!, $owner: String, $language: String){
-  createProject(projectName: $name,
-  owner: $owner, language: $language)
+export default gql`mutation newProject($id:ID!, $name: String!, $key: String!, $owner: String, $description: String){
+  createProject(projectName: $name, project_id: $id, projectKey: $key,
+  owner: $owner, description: $description)
   {
+    __typename,
     project_id,
+    projectKey,
     projectName,
     owner,
-    language
+    description
   }
 }`;

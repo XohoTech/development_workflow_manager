@@ -1,10 +1,14 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export default gql`
 mutation deleteProject($id: ID!){
     deleteProject(project_id: $id){
+        __typename,
         project_id,
-        projectName
+        projectKey,
+        projectName,
+        owner,
+        description
     }
 }
 `;

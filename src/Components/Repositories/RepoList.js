@@ -39,7 +39,7 @@ class RepoList extends Component {
                                                     <label className="text-info ml-sm-3">{repo.owner}</label>
                                                     <br/>
                                                     <label className="text-primary">Language: </label>
-                                                    <label className="text-info ml-sm-3">{repo.language}</label>
+                                                    <label className="text-info ml-sm-3">{repo.language.charAt(0).toUpperCase().concat(repo.language.substring(1,repo.language.length))}</label>
                                                 </div>
                                                 <div className="col-7">
                                                     <Mutation mutation={DeleteRepoQuery} variables={{id: repo.id}}
