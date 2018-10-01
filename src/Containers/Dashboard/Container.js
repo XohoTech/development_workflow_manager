@@ -18,8 +18,8 @@ import navigation from "../../_nav.js";
 // routes config
 import routes from "../../routes.js";
 
-import XT_Logo from "../../assets/img/XT-logo.png";
-import FullLogo from "../../assets/img/Full-Logo.png";
+import XT_Logo from "../../assets/img/brand/XT-logo.png";
+import FullLogo from "../../assets/img/brand/Full-Logo.png";
 
 import {withApollo} from "react-apollo";
 

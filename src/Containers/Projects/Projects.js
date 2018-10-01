@@ -12,7 +12,7 @@ class Projects extends Component {
 					{result =>
 						result.loading ?
 							<p className="mb-5">Loading...</p> :
-							<ProjectList history={this.props.history} projectList={result.data.ProjectList} refetch={result.refetch}/>
+							<ProjectList projectList={result.data.ProjectList} refetch={result.refetch}/>
 					}
 				</Query>
 			</div>
