@@ -18,8 +18,8 @@ import navigation from "../../_nav.js";
 // routes config
 import routes from "../../routes.js";
 
-import Logo from "../../assets/img/Full-Loge.png";
-import FullLogo from "../../assets/img/Full-Loge.png";
+import XT_Logo from "../../assets/img/XT-logo.png";
+import FullLogo from "../../assets/img/Full-Logo.png";
 
 import {withApollo} from "react-apollo";
 
@@ -33,7 +33,7 @@ class AppContainer extends Component {
 					<AppSidebarToggler className="d-lg-none" display="md" mobile />
 					<AppNavbarBrand
 						full={{ src: FullLogo, width: 89, height: 25, alt: "XohoTech Logo" }}
-						minimized={{ src: Logo, width: 30, height: 30, alt: "XohoTech Logo" }}
+						minimized={{ src: XT_Logo, width: 30, height: 30, alt: "XohoTech Logo" }}
 					/>
 					<AppSidebarToggler className="d-md-down-none" display="lg" />
 					<Nav className="ml-auto" navbar>

@@ -3985,7 +3985,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4005,7 +4005,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4022,7 +4022,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4051,7 +4051,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6550,7 +6550,9 @@ a.text-dark:hover, a.text-dark:focus {
 .breadcrumb {
   position: relative;
   border-radius: 0;
-  border-bottom: 1px solid #c8ced3; }
+  /*border-bottom: 1px solid #c8ced3;*/
+  border: none;
+}
 
 .brand-card {
   position: relative;
@@ -7751,8 +7753,10 @@ canvas {
   height: 55px;
   padding: 0;
   margin: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #c8ced3; }
+  background-color: #091929;
+  /*border-bottom: 1px solid #c8ced3;*/
+  border: none;
+}
   .app-header .navbar-brand {
     display: inline-flex;
     align-items: center;
@@ -8026,7 +8030,10 @@ canvas {
   flex-direction: column;
   padding: 0;
   color: #fff;
-  background: #2f353a; }
+  /*background: #2f353a;*/
+  background: #091929;
+
+}
   .sidebar .sidebar-close {
     position: absolute;
     right: 0;
@@ -8760,7 +8767,8 @@ html[dir="rtl"] .aside-menu {
     z-index: 1020;
     width: 100%; }
   .header-fixed .app-body {
-    margin-top: 55px; }
+    margin-top: 55px;
+  }
   .sidebar-fixed .sidebar {
     position: fixed;
     z-index: 1019;
@@ -9282,7 +9290,9 @@ html[dir="rtl"] .aside-menu-show .aside-menu {
     z-index: 1020;
     width: 100%;
     text-align: center;
-    background-color: #fff; }
+    background-color: #091929;
+    border: none;
+  }
     .app-header .navbar-toggler {
       color: #fff; }
     .app-header .navbar-brand {
@@ -9290,7 +9300,8 @@ html[dir="rtl"] .aside-menu-show .aside-menu {
       left: 50%;
       margin-left: -77.5px; }
   .app-body {
-    margin-top: 55px; }
+    /*margin-top: 55px;*/
+  }
   .sidebar {
     position: fixed;
     z-index: 1019;
