@@ -1,41 +1,63 @@
 {
     "env": {
         "browser": true,
-        "commonjs": true,
-        "es6": true
+        "node": true,
+        "jest/globals": true,
+        "jsx-control-statements/jsx-control-statements": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+        "react-app",
+        "airbnb",
+        "plugin:jest/recommended",
+        "plugin:jsx-control-statements/recommended"
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
+    "parser": "babel-eslint",
+    "plugins": ["jest", "jsx-control-statements"],
     "rules": {
-        "indent": [
+        "comma-dangle": ["error", "never"],
+        "no-unused-vars": [
             "error",
-            "tab"
+            {
+                "vars": "local",
+                "args": "none"
+            }
         ],
-        "linebreak-style": [
+        "no-useless-escape": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "jsx-a11y/anchor-is-valid": [
             "error",
-            "unix"
+            {
+                "components": ["Link"],
+                "specialLink": ["to"]
+            }
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/label-has-for": "off",
+        "jsx-control-statements/jsx-choose-not-empty": "warn",
+        "jsx-control-statements/jsx-for-require-each": "warn",
+        "jsx-control-statements/jsx-for-require-of": "warn",
+        "jsx-control-statements/jsx-if-require-condition": "warn",
+        "jsx-control-statements/jsx-otherwise-once-last": "warn",
+        "jsx-control-statements/jsx-use-if-tag": "warn",
+        "jsx-control-statements/jsx-when-require-condition": "warn",
+        "jsx-control-statements/jsx-jcs-no-undef": "warn",
+        "react/jsx-filename-extension": "off",
+        "react/jsx-no-undef": ["error", { "allowGlobals": true }],
+        "react/no-string-refs": "off",
+        "react/prop-types": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src/"]
+            }
+        }
     }
 }
